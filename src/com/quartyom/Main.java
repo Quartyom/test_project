@@ -30,7 +30,7 @@ class Being {
     }
 
     private boolean is_alive = true;
-    private String name = "id " + rand.nextInt(1<<31); // 2^31
+    private String name = "id " + rand.nextInt(1<<31 - 1); // 2^31
 
     public boolean get_is_alive(){ return is_alive; }
     public void set_is_alive(boolean is_alive){ this.is_alive = is_alive;}
@@ -75,7 +75,7 @@ class Trader extends Human {
     public Trader(){}
     public Trader(String name, boolean is_alive, boolean is_male, int age, float goods_uniqueness){
         super(name, is_alive, is_male, age);
-        this.goods_uniqueness = goods_uniqueness;
+        set_goods_uniqueness(goods_uniqueness);
     }
 
     private float goods_uniqueness = 0.5f; // 0 -> 1 more uniq
