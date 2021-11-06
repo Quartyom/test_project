@@ -22,15 +22,14 @@ public class Main {
 
 class Being {
     private Random rand = new Random();
+    private boolean is_alive = true;
+    private String name = "id " + rand.nextInt(1<<31 - 1); // 2^31
 
     public Being(){}
     public Being(String name, boolean is_alive){
         this.name = name;
         this.is_alive = is_alive;
     }
-
-    private boolean is_alive = true;
-    private String name = "id " + rand.nextInt(1<<31 - 1); // 2^31
 
     public boolean get_is_alive(){ return is_alive; }
     public void set_is_alive(boolean is_alive){ this.is_alive = is_alive;}
@@ -47,15 +46,15 @@ class Being {
 }
 
 class Human extends Being {
+    private boolean is_male = true;
+    private int age = 18;
+
     public Human(){}
     public Human(String name, boolean is_alive, boolean is_male, int age){
         super(name, is_alive);
         this.age = age;
         this.is_male = is_male;
     }
-
-    private boolean is_male = true;
-    private int age = 18;
 
     public boolean get_is_male(){ return is_male; }
     public void set_is_male(boolean is_male){ this.is_male = is_male;}
@@ -72,13 +71,13 @@ class Human extends Being {
 }
 
 class Trader extends Human {
+    private float goods_uniqueness = 0.5f; // 0 -> 1 more uniq
+
     public Trader(){}
     public Trader(String name, boolean is_alive, boolean is_male, int age, float goods_uniqueness){
         super(name, is_alive, is_male, age);
         set_goods_uniqueness(goods_uniqueness);
     }
-
-    private float goods_uniqueness = 0.5f; // 0 -> 1 more uniq
 
     public float get_goods_uniqueness(){return goods_uniqueness;}
     public void set_goods_uniqueness(float goods_uniqueness){
@@ -94,12 +93,13 @@ class Trader extends Human {
 }
 
 class Doctor extends Human {
+    private int experience_in_years = 2;
+
     public Doctor(){}
     public Doctor(String name, boolean is_alive, boolean is_male, int age, int experience_in_years){
         super(name, is_alive, is_male, age);
         this.experience_in_years = experience_in_years;
     }
-    private int experience_in_years = 2;
 
     public int get_experience_in_years(){return experience_in_years;}
     public void set_experience_in_years(int experience_in_years){this.experience_in_years = experience_in_years;}
