@@ -1,18 +1,18 @@
 package com.quartyom;
 
 class Human extends Being {
-    private boolean is_male = true;
+    private int is_male = 1;
     private int age = 18;
 
     public Human(){}
-    public Human(String name, boolean is_alive, boolean is_male, int age){
+    public Human(String name, int is_alive, int is_male, int age){
         super(name, is_alive);
         this.age = age;
         this.is_male = is_male;
     }
 
-    public boolean get_is_male(){ return is_male; }
-    public void set_is_male(boolean is_male){ this.is_male = is_male;}
+    public int get_is_male(){ return is_male; }
+    public void set_is_male(int is_male){ this.is_male = is_male;}
 
     public int get_age(){return age;}
     public void set_age(){this.age = age;}

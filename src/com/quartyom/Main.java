@@ -8,9 +8,9 @@ public class Main {
         var Residents = new LinkedList<Being>();
 
         Residents.add(new Being());
-        Residents.add(new Being("Butterfly", false));
+        Residents.add(new Being("Butterfly", 0));
         Residents.add(new Human());
-        Residents.add(new Trader("Marques", true, true, 43, 0.79f));
+        Residents.add(new Trader("Marques", 1, 1, 43, 0.79f));
         Residents.add(new Doctor());
 
         for (var item : Residents){
